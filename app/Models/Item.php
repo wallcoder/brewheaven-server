@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Item extends Model
 {
-   
 
-    protected $fillable = [];
+
+    protected $fillable = ['category_id', 'name', 'image', 'price', 'description'];
 
     public function category(): BelongsTo{
         return $this->belongsTo(Category::class);
