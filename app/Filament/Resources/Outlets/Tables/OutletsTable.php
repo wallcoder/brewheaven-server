@@ -1,32 +1,32 @@
 <?php
 
-namespace App\Filament\Resources\Items\Tables;
+namespace App\Filament\Resources\Outlets\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
-use Filament\Schemas\View\Components\TextComponent;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class ItemsTable
+class OutletsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                ImageColumn::make('image'),
-                TextColumn::make('category.name')
-                    ->searchable(),
-                TextColumn::make('parent.name'),
                 TextColumn::make('name')
                     ->searchable(),
-
-                TextColumn::make('price')
-                    ->money()
+                TextColumn::make('address')
+                    ->searchable(),
+                TextColumn::make('open_time')
+                    ->time()
                     ->sortable(),
+                TextColumn::make('close_time')
+                    ->time()
+                    ->sortable(),
+                TextColumn::make('phone')
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

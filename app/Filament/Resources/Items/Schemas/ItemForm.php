@@ -19,6 +19,7 @@ class ItemForm
                      Select::make('category_id')
                     ->relationship('category', 'name')
                     ->required(),
+                    Select::make('parent_id')->relationship('parent', 'name'),
                 TextInput::make('name')->placeholder("Enter Name")
                     ->required(),
                 TextInput::make('price')
